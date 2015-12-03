@@ -1,7 +1,7 @@
 {
   "name": "tuple-encoding",
   "version": "1.0.0",
-  "description": "Encode/decode an Object as a tuple to preserve order",
+  "description": "Encode/decode an Object as a tuple to preserve order using bytewise",
   "main": "index.js",
   "devDependencies": {
     "tape": "^4.2.0",
@@ -24,12 +24,16 @@
     "level",
     "leveldb",
     "levelup",
-    "serialize"
+    "serialize",
+    "bytewise"
   ],
   "author": "Emil Bay <emil.bay@pol.dk>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/politiken-journalism/tuple-encoding/issues"
   },
-  "homepage": "https://github.com/politiken-journalism/tuple-encoding#readme"
+  "homepage": "https://github.com/politiken-journalism/tuple-encoding#readme",
+  "dependencies": {
+    "bytewise": "^1.1.0"
+  }
 }

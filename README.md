@@ -1,7 +1,7 @@
 `tuple-encoding`
 ================
 
-> Encode/decode an Object as a tuple to preserve order
+> Encode/decode an Object as a tuple to preserve order using bytewise
 
 Usage
 -----
@@ -12,9 +12,9 @@ var tupleEncoding = require('tuple-encoding')
 
 var enc = tupleEncoding(['foo', 'bar'])
 
-enc.encode({foo: 'baz', bar: 'qux'}) // baz~qux
+enc.encode({foo: 'baz', bar: 'qux'}) // Buffer(' pbaz\u0000pqux\u0000\u0000')
 
-enc.decode('baz~qux') // {foo: 'baz', bar: 'qux'}
+enc.decode(new Buffer(' pbaz\u0000pqux\u0000\u0000', 'binary')) // {foo: 'baz', bar: 'qux'}
 ```
 
 API
@@ -22,19 +22,12 @@ API
 
 ```jsig
 tupleEncoding : (
-  keys: Array<String>,
-  delimiter?: String
+  keys: Array<String>
 ) => {
-  encode: Function(obj: Object),
-  decode: Function(str: String)
+  encode: Function(obj: Object) => Buffer,
+  decode: Function(buf: Buffer) => Object
 }
 ```
-
-Known issues
-------------
-
-The delimiter used is currently not escaped. This is also illustrated with a
-failing test case for `.decode`
 
 License
 -------
