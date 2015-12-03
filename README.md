@@ -1,7 +1,7 @@
 `tuple-encoding`
 ================
 
-> Encode/decode an Object as a tuple to preserves order
+> Encode/decode an Object as a tuple to preserve order
 
 Usage
 -----

@@ -1,7 +1,7 @@
 {
   "name": "tuple-encoding",
   "version": "1.0.0",
-  "description": "Encode/decode an Object as a tuple to preserves order",
+  "description": "Encode/decode an Object as a tuple to preserve order",
   "main": "index.js",
   "devDependencies": {
     "tape": "^4.2.0",
