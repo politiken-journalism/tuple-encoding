@@ -3,6 +3,11 @@
 
 > Encode/decode an Object as a tuple to preserve order using bytewise
 
+Problem
+-------
+
+Javascript Objects do not guarantee that the order of keys is preserved. However, this is important if you want to exploit order and use complex objects as keys in eg. leveldb. This module encodes an object as a tuple to solve this problem.
+
 Usage
 -----
 
